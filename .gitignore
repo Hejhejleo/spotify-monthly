@@ -1,1 +1,11 @@
 /.idea/
+node_modules/
+.DS_Store
+generated-playlists.html
+scripts/.spotify-token.json
+scripts/.cert.pem
+scripts/.key.pem
+.idea/
+all-playlists.html
+/scripts/generate-playlists.js
+/scripts/
