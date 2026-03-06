@@ -14,6 +14,7 @@ body {
   background: linear-gradient(135deg, #1e3a20 0%, #0a1f0f 100%);
   color: #fff;
   min-height: 100vh;
+  zoom: 0.9;
 }
 
 .back-button {
