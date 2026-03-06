@@ -1,0 +1,206 @@
+body {
+  padding: 60px 20px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.newage-container {
+  max-width: 1400px;
+  width: 100%;
+}
+
+.newage-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.newage-header h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: -1px;
+}
+
+.newage-header p {
+  font-size: 1.1rem;
+  color: #b3b3b3;
+}
+
+.chapters-panorama {
+  display: flex;
+  gap: 4px;
+  border-radius: 8px;
+  overflow: visible;
+  height: 640px;
+  margin: 0 auto;
+  position: relative;
+  justify-content: center;
+}
+
+.chapter-card {
+  flex: 0 0 160px;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  transition: flex 0.4s ease-out, transform 0.4s ease-out, box-shadow 0.4s ease-out, filter 0.4s ease-out, opacity 0.4s ease-out;
+  z-index: 1;
+  border-radius: 8px;
+  transform: scale(1);
+}
+
+.chapter-card:hover {
+  flex: 0 0 640px;
+  z-index: 10;
+  transform: scale(1.05);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+
+.chapters-panorama:has(.chapter-card:hover) .chapter-card:not(:hover) {
+  flex: 0 0 60px;
+  transform: scale(0.95);
+  filter: brightness(0.7);
+  opacity: 0.8;
+}
+
+.chapter-image {
+  width: 640px;
+  height: 100%;
+  background-size: 640px auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  transition: left 0.4s ease-out;
+}
+
+.chapter-card:nth-child(1) .chapter-image {
+  left: 0;
+}
+
+.chapter-card:nth-child(2) .chapter-image {
+  left: -160px;
+}
+
+.chapter-card:nth-child(3) .chapter-image {
+  left: -320px;
+}
+
+.chapter-card:nth-child(4) .chapter-image {
+  left: -480px;
+}
+
+.chapter-card:hover .chapter-image {
+  left: 0 !important;
+}
+
+.chapter-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 30%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 32px 16px;
+  transition: background 0.4s ease, opacity 0.4s ease;
+  opacity: 1;
+}
+
+.chapter-card:hover .chapter-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 35%);
+  opacity: 1;
+}
+
+.chapter-card:not(:hover) .chapter-overlay {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.chapter-number {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 8px;
+  opacity: 0.95;
+  letter-spacing: -2px;
+}
+
+.chapter-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 900px) {
+  .chapters-panorama {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .chapter-card {
+    flex: 1 1 calc(50% - 4px);
+    height: 350px;
+  }
+  
+  .chapter-card:hover {
+    flex: 1 1 calc(50% - 4px);
+  }
+  
+  .chapter-image {
+    width: 100%;
+    background-size: 200% auto;
+  }
+  
+  .chapter-card:hover .chapter-image {
+    background-size: 200% auto;
+  }
+  
+  .chapter-card:nth-child(1) .chapter-image,
+  .chapter-card:nth-child(2) .chapter-image {
+    background-position: 0% center;
+  }
+  
+  .chapter-card:nth-child(3) .chapter-image,
+  .chapter-card:nth-child(4) .chapter-image {
+    background-position: 100% center;
+  }
+}
+
+@media (max-width: 600px) {
+  .newage-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .chapters-panorama {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .chapter-card {
+    height: 300px;
+  }
+  
+  .chapter-card:hover {
+    flex: 1;
+  }
+  
+  .chapter-image {
+    width: 100%;
+    background-size: cover;
+    background-position: center !important;
+  }
+  
+  .chapter-card:hover .chapter-image {
+    background-size: cover;
+  }
+  
+  .chapter-number {
+    font-size: 2.5rem;
+  }
+}

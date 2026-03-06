@@ -1,0 +1,91 @@
+@font-face {
+  font-family: SpotifyWebFont;
+  src: url("../font/circular/ProductSans-Medium.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: SpotifyWebFont, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #1e3a20 0%, #0a1f0f 100%);
+  color: #fff;
+  min-height: 100vh;
+}
+
+.back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: #181818;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.2s;
+  z-index: 100;
+}
+
+.back-button:hover {
+  background: #282828;
+  transform: scale(1.05);
+}
+
+.card {
+  background: #181818;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.card-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: #282828;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.card-content {
+  padding: 24px;
+}
+
+.card-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.card-content p {
+  color: #b3b3b3;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a1f0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #282828;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3e3e3e;
+}

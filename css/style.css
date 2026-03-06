@@ -1,73 +1,67 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #138a3d;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /*height: 120vh;*/
-  margin: 0;
-  padding: 20px;
-  box-sizing: border-box;
+  padding: 40px 20px;
 }
 
 #playlist-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.playlist-item {
-  text-align: center;
-  width: 300px; /* Fixed width */
+.playlist-item a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
-.playlist-item .image-container {
-  width: 300px; /* Fixed width */
-  height: 300px; /* Fixed height */
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
-}
-
-.playlist-item .image-container img {
+.playlist-item .card-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures the image is cropped to fit the container */
+  object-fit: cover;
+  object-position: center;
   display: block;
   transition: transform 0.3s;
 }
 
-.playlist-item .image-container img:hover {
-  transform: scale(1.1);
+.playlist-item:hover .card-image img {
+  transform: scale(1.05);
 }
 
 .countdown-container {
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 .countdown {
-  font-size: 18px;
-  color: #000000;
+  font-size: 0.95rem;
+  color: #b3b3b3;
+  margin: 0;
 }
 
-/* width */
-::-webkit-scrollbar {
-  width: 5px;
+@media (min-width: 1400px) {
+  #playlist-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: #138a3d;
+@media (max-width: 1200px) {
+  #playlist-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #000000;
+@media (max-width: 900px) {
+  #playlist-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #2f2f2f;
+@media (max-width: 600px) {
+  #playlist-container {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
 }
+
